@@ -1,0 +1,13 @@
+root@mp:~/Desktop# lex sample1.l
+root@mp:~/Desktop# yacc -d sample1.y
+root@mp:~/Desktop# cc y.tab.c lex.yy.c -ll
+y.tab.c: In function ‘yyparse’:
+y.tab.c:1111:16: warning: implicit declaration of function ‘yylex’ [-Wimplicit-function-declaration]
+       yychar = yylex ();
+                ^~~~~
+y.tab.c:1240:7: warning: implicit declaration of function ‘yyerror’; did you mean ‘yyerrok’? [-Wimplicit-function-declaration]
+       yyerror (YY_("syntax error"));
+       ^~~~~~~
+       yyerrok
+root@mp:~/Desktop# ./a.out
+
